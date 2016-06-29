@@ -1,1 +1,3 @@
-input:required:valid { border-color: green; }
+input:required:valid {
+  border-color: green;
+}

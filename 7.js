@@ -1,8 +1,8 @@
 CustomValidation.prototype.checkValidity = function(input) {
 
-  // In-built validity checks here ------
+  // Тут идут встроенные проверки валидности
 
-  // Custom Validity checks ------
+  // А тут специальные
   if (!input.value.match(/[a-z]/g)) {
     this.addInvalidity('At least 1 lowercase letter is required');
   }

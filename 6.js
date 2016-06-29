@@ -2,28 +2,28 @@ CustomValidation.prototype.getInvaliditiesForHTML = function() {
   return this.invalidities.join('. <br>');
 }
 
-// On click of form submit buttons
+// Добавляем обработчик клика на кнопку отправки формы
 submit.addEventListener('click', function(e) {
-  // Loop through all inputs
+  // Пройдёмся по всем полям
   for (var i = 0; i < inputs.length; i++) {
 
     var input = inputs[i];
 
-    // Use native JavaScript checkValidity() function to check if input is valid
+    // Проверим валидность поля, используя встроенную в JavaScript функцию checkValidity()
     if (input.checkValidity() == false) {
 
-      var inputCustomValidation = new CustomValidation(); // New instance of CustomValidation
-      inputCustomValidation.checkValidity(input); // Check Invalidities
-      var customValidityMessage = inputCustomValidation.getInvalidities(); // Get custom invalidity messages
-      input.setCustomValidity(customValidityMessage); // set as custom validity message
+      var inputCustomValidation = new CustomValidation(); // Создадим объект CustomValidation
+      inputCustomValidation.checkValidity(input); // Выявим ошибки
+      var customValidityMessage = inputCustomValidation.getInvalidities(); // Получим все сообщения об ошибках
+      input.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
 
-      // DISPLAY ERROR MESSAGES IN DOCUMENT
+      // Добавим ошибки в документ
       var customValidityMessageForHTML = inputCustomValidation.getInvaliditiesForHTML();
       input.insertAdjacentHTML('afterend', '<p class="error-message">' + customValidityMessageForHTML + '</p>')
       stopSubmit = true;
 
-    } // end if
-  } // end loop
+    } // закончился if
+  } // закончился цикл
 
   if (stopSubmit) {
     e.preventDefault();

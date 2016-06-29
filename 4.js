@@ -1,12 +1,12 @@
 input.validity = {  
-  valid: false // If the input is valid
-  customError: false // If a custom error message has been set
-  patternMismatch: false // If the invalidity is against the pattern attribute
-  rangeOverflow: false // If the invalidity is against the max attribute
-  rangeUnderflow: true // If the invalidity is against the min attribute
-  stepMismatch: true // If the invalidity is against the step attribute
-  tooLong: false // If the invalidity is against the maxlength attribute
-  tooShort: false // If the invalidity is against the minlength attribute
-  typeMismatch: false // If the invalidity is against the type attribute
-  valueMissing: false // If the input is required but empty
+  valid: false // Поле валидно
+  customError: false // Установленно специальное сообщение ошибки
+  patternMismatch: false // Значение не удовлетворяет шаблону, установленному в атрибуте pattern
+  rangeOverflow: false // Значение превосходит атрибут max
+  rangeUnderflow: true // Значение меньше атрибута min
+  stepMismatch: true // Значение не соответствует указаному шагу
+  tooLong: false // Значение слишком длинное
+  tooShort: false // Значение слишком короткое
+  typeMismatch: false // Значение не соответствует указаному атрибуту type
+  valueMissing: false // Отсутствует обязательное значение
 };
